@@ -18,7 +18,7 @@ export default function UserDataSection() {
         height={150}
         width={150}
       />
-      <h2>Bem vindo {user?.name}</h2>
+      <h2>Bem vindo: {user?.name}</h2>
       <p>E-mail: {user?.email}</p>
       <p>Telefone: {user?.phone}</p>
     </UserDataSectionContainer>

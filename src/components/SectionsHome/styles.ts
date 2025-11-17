@@ -7,8 +7,10 @@ export const SectionsHomeContainer = styled.section`
   border-radius: 0.8rem;
   padding: 1.6rem;
   margin: 1.0rem 0rem;
+
   h2 {
-    font-size: 1.6rem;
+    font-size: 2.0rem;
     color: ${({theme}) => theme.colors.white};
+    margin-bottom: 1.0rem;
   }
 `;

@@ -11,14 +11,27 @@ declare module "styled-components" {
       white: string;
       error: string;
     };
+    colorsAppointment: {
+      cardColorAppointment: string;
+      greyAppointmentCard: string;
+      strongAppointmentCard: string;
+      pendingBackground: string;
+      pendingColor: string;
+      confirmedBackground: string;
+      confirmedColor: string;
+      canceledBackground: string;
+      canceledColor: string;
+      cancelAppointmentButton: string;
+      cancelAppointmentButtonHover: string;
+    };
     fonts: {
       primary: string;
       secondary: string;
-    },
+    };
     breakpoints: {
-    mobile: string,
-    tablet: string,
-    desktop: string,
-  },
+      mobile: string;
+      tablet: string;
+      desktop: string;
+    };
   }
 }

@@ -1,4 +1,6 @@
 'use client'
+import AppointmentForm from "@/components/AppointmentForm";
+import AppointmentHistory from "@/components/AppointmentClientHistory";
 import SectionsHome from "@/components/SectionsHome";
 import useAuth from "@/context/Auth/useAuth";
 
@@ -11,8 +13,12 @@ export default function ClientRoleGuard() {
 
   return (
     <>
-      <SectionsHome subtitle="Agende seu horário"></SectionsHome>
-      <SectionsHome subtitle="Histórico de horários"></SectionsHome>
+      <SectionsHome subtitle="Agende seu horário">
+        <AppointmentForm />
+      </SectionsHome>
+      <SectionsHome subtitle="Histórico de horários">
+        <AppointmentHistory />
+      </SectionsHome>
     </>
   );
 }

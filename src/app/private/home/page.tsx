@@ -1,21 +1,45 @@
 import Header from "@/components/Header";
-import { HomePageContainer } from "./styles";
+import {
+  GreetingSectionHome,
+  HomePageContainer,
+  PageContainer,
+} from "./styles";
 import UserDataSection from "@/components/UserDataSection";
 import SectionsHome from "@/components/SectionsHome";
 import ClientRoleGuard from "@/components/Guards/ClientRoleGuard";
 import BarberRoleGuard from "@/components/Guards/BarberRoleGuard";
+import FetchBarbers from "@/components/FetchEmployees";
+import FetchServices from "@/components/FetchServices";
+import Footer from "@/components/footer";
+import AdminRoleGuard from "@/components/Guards/AdminRoleGuard";
 
 export default function PageHome() {
   return (
-    <HomePageContainer>
+    <PageContainer>
       <Header />
-      <UserDataSection />
-      <SectionsHome subtitle="Funcionários"></SectionsHome>
+      <HomePageContainer>
+        <GreetingSectionHome>
+          <UserDataSection />
+          <div className="text-box">
+            <h2>Bem vindo a barbearia virtual!</h2>
+            <p>Aqui você pode agendar os seus cortes</p>
+            <p>Venha conhecer nossos serviços e barbeiro</p>
+          </div>
+        </GreetingSectionHome>
 
-      <SectionsHome subtitle="Serviços"></SectionsHome>
+        <SectionsHome subtitle="Funcionários">
+          <FetchBarbers />
+        </SectionsHome>
 
-      <ClientRoleGuard />
-      <BarberRoleGuard />
-    </HomePageContainer>
+        <SectionsHome subtitle="Serviços">
+          <FetchServices />
+        </SectionsHome>
+
+        <ClientRoleGuard />
+        <BarberRoleGuard />
+        <AdminRoleGuard />
+      </HomePageContainer>
+      <Footer />
+    </PageContainer>
   );
 }

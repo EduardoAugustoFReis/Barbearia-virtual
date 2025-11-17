@@ -7,6 +7,7 @@ export const MyAccountForm = styled.form`
   gap: 1rem;
   padding: 1.6rem;
   border-radius: 0.8rem;
+  background-color: ${({ theme }) => theme.colors.backgroundForm};
 
 
   h2 {

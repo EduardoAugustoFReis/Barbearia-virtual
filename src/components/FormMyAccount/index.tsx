@@ -6,6 +6,7 @@ import Input from "../Input";
 import InputFilePreview from "../InputFilePreview";
 import { api } from "@/services/api";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function FormMyAccount() {
   const router = useRouter();
@@ -15,7 +16,6 @@ export default function FormMyAccount() {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [avatar, setAvatar] = useState<File | null>(null);
-
 
   const handleMyAccount = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,12 +38,16 @@ export default function FormMyAccount() {
         },
       });
 
-      alert('Dados atualizado com sucesso.');
+      alert("Dados atualizado com sucesso.");
       setUser(response.data);
-      localStorage.setItem('user', JSON.stringify(response.data));
-      router.push('/private/home');
-    } catch (error: any) {
-      console.error("Erro ao atualizar usuário", error.response?.data || error);
+      localStorage.setItem("user", JSON.stringify(response.data));
+      router.push("/private/home");
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error("Erro ao atualizar usuário", error.response?.data);
+      } else {
+        console.error("Erro inesperado", error);
+      }
     }
   };
 

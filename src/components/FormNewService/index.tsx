@@ -5,6 +5,7 @@ import Input from "../Input";
 import { FormNewServiceContainer } from "./styles";
 import { api } from "@/services/api";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function FormNewService() {
   const [name, setName] = useState("");
@@ -22,8 +23,12 @@ export default function FormNewService() {
 
       alert("Serviço cadastrado com sucesso.");
       router.push("/private/home");
-    } catch (error) {
-      console.error("Erro ao cadastrar serviço", error.response?.data || error);
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error("Erro ao atualizar usuário", error.response?.data);
+      } else {
+        console.error("Erro inesperado", error);
+      }
     }
   };
 

@@ -6,6 +6,7 @@ import { NewEmployeeForm } from "./styles";
 import SelectNewEmployee from "./SelectNewEmployee";
 import InputFilePreview from "../InputFilePreview";
 import { api } from "@/services/api";
+import axios from "axios";
 
 export default function FormNewEmployee() {
   const [name, setName] = useState("");
@@ -39,8 +40,12 @@ export default function FormNewEmployee() {
 
       alert("Funcinário cadastrado com sucesso.");
       router.push("/private/home");
-    } catch (error) {
-      console.error("Erro ao cadastrar funcinário", error.response?.data || error);
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error("Erro ao atualizar usuário", error.response?.data);
+      } else {
+        console.error("Erro inesperado", error);
+      }
     }
   };
 

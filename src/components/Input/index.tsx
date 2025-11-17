@@ -4,7 +4,7 @@ import { StyledInput } from "./styles";
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   label: string, 
   id: string, 
-  placeholder: string,
+  placeholder?: string,
 }
 
 export default function Input({label, id, placeholder, ...rest}: InputProps) {
