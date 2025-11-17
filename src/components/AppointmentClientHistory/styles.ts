@@ -41,22 +41,19 @@ export const AppointmentClientHistoryContainer = styled.div`
     }
 
     .deleteAppointment {
-      top: 1.0rem;
-      right: 1.0rem;
       position: absolute;
+      top: 1rem;
+      right: 1rem;
       font-size: 1.6rem;
       border-radius: 0.8rem;
       padding: 0.8rem;
       border: none;
-      background-color: ${({ theme }) =>
-        theme.colorsAppointment.cancelAppointmentButton};
+      background: none;
       color: ${({ theme }) => theme.colors.white};
 
       &:hover {
-        background-color: ${({ theme }) =>
-          theme.colorsAppointment.cancelAppointmentButtonHover};
+        color: ${({ theme }) => theme.colors.grey};
       }
-      color: ${({ theme }) => theme.colors.grey};
     }
 
     .status {

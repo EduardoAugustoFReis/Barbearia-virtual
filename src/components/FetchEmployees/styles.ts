@@ -5,7 +5,7 @@ export const FetchBarbersContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-
+  gap: 1.0rem;
   .barbersCard {
     position: relative;
     background-color: ${({ theme }) => theme.colors.backgroundForm};
@@ -41,4 +41,5 @@ export const FetchBarbersContainer = styled.div`
       border-radius: 50%;
     }
   }
+
 `;

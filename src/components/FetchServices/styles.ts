@@ -5,6 +5,7 @@ export const FetchServicesContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap-reverse;
+  gap: 1rem;
 
   .serviceCard {
     position: relative;
@@ -14,7 +15,7 @@ export const FetchServicesContainer = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.white};
     padding: 2.4rem;
     border-radius: 0.8rem;
-    gap: .5rem;
+    gap: 0.5rem;
 
     .deleteService {
       top: 0.5rem;

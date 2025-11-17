@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const SignupFormContainer = styled.form`
-  margin: 1.0rem auto;
+  margin: 1rem auto;
   max-width: 100%;
-  width: 50.0rem;
+  width: 50rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -44,5 +44,19 @@ export const SignupFormContainer = styled.form`
     &:hover {
       color: ${({ theme }) => theme.colors.white};
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    h2 {
+      font-size: 2.4rem;
+    }
+
+    h3 {
+      font-size: 2.2rem;
+    }
+
+    width: 90%;
+    max-width: 35rem;
+    padding: 1.2rem;
   }
 `;

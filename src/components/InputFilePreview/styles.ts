@@ -17,6 +17,7 @@ export const InputFilePreviewContainer = styled.div`
   }
 
   label {
+    text-align: center;
     color: ${({theme}) => theme.colors.white};
     width: fit-content;
     cursor: pointer;

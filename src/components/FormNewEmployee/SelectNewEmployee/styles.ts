@@ -4,7 +4,7 @@ export const SelectNewEmployeeContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  
+
   label {
     font-size: 1.8rem;
     color: ${({ theme }) => theme.colors.grey};
@@ -20,5 +20,9 @@ export const SelectNewEmployeeContainer = styled.div`
       color: ${({ theme }) => theme.colors.white};
       background-color: ${({ theme }) => theme.colors.backgroundPage};
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    flex-direction: column;
   }
 `;

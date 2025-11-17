@@ -2,8 +2,14 @@
 import useAuth from "@/context/Auth/useAuth";
 import { MenuContainer } from "./styles";
 import { useRouter } from "next/navigation";
+import { X } from "@deemlol/next-icons";
 
-export default function Menu() {
+type MenuProps = {
+  open: boolean;
+  onClose: () => void;
+};
+
+export default function Menu({ open, onClose }: MenuProps) {
   const { logout, user } = useAuth();
   const router = useRouter();
 
@@ -12,7 +18,11 @@ export default function Menu() {
   };
 
   return (
-    <MenuContainer>
+    <MenuContainer open={open}>
+       <button className="close" onClick={onClose}>
+        <X size={28} />
+      </button>
+
       <button onClick={logout}>logout</button>
       <button onClick={() => handleMenuNavigation(`/private/myAccount`)}>
         Minha Conta

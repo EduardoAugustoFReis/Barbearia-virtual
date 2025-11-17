@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const LoginFormContainer = styled.form`
-  margin: 1.0rem auto;
+  margin: 1rem auto;
   max-width: 100%;
-  width: 50.0rem;
+  width: 50rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -43,5 +43,11 @@ export const LoginFormContainer = styled.form`
     &:hover {
       color: ${({ theme }) => theme.colors.white};
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 90%;
+    max-width: 35rem;
+    padding: 1.2rem;
   }
 `;

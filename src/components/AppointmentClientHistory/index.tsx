@@ -69,7 +69,7 @@ export default function AppointmentClientHistory() {
               className="deleteAppointment"
               onClick={() => handleDeleteAppointment(appoint.id)}
             >
-              <Trash2 size={24} />
+              <Trash2 size={20} />
             </button>
 
             <span
