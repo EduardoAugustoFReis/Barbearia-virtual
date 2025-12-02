@@ -12,6 +12,7 @@ interface AuthProviderProps {
 
 export default function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<IUser | null>(null);
+  const [loading, setLoading] = useState(true); // 🔥 novo
 
   const login = async (email: string, password: string) => {
     try {
@@ -20,12 +21,11 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       const { user, token } = response.data;
 
       Cookies.set("token", token, {
-        expires: 1, 
+        expires: 1,
         sameSite: "lax",
       });
 
       localStorage.setItem("user", JSON.stringify(user));
-
       setUser(user);
     } catch (error) {
       console.error("Erro ao fazer login:", error);
@@ -47,7 +47,12 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       setUser(JSON.parse(storedUser));
     }
 
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return null; 
+  }
 
   return (
     <AuthContext.Provider value={{ user, setUser, login, logout }}>
